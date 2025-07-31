@@ -7,9 +7,9 @@ function Team(){
         <div style={{textAlign:'center',padding:'5px 40px'}}>
             <h1><span style={{color:'red'}}><b>TEDx</b></span>HITAM TEAM 2025</h1>
             <p style={{textAlign:'center',color:'white'}}>A passionate collective of changemakers, innovators, and visionaries working together to spark conversations, inspire action, and bring powerful ideas to life at HITAM. Fueled by curiosity and driven by purpose, the TEDxHITAM Team 2025 is dedicated to creating an unforgettable platform that celebrates creativity, diversity, and the spirit of "ideas worth spreading.</p>
-            <button className="tabs">TEAM 2023</button>
-            <button className="tabs">TEAM 2024</button>
             <button className="tabs">TEAM 2025</button>
+            <button className="tabs">TEAM 2024</button>
+            <button className="tabs">TEAM 2023</button>
         </div>
 
         <div style={{padding:'5px 40px'}}>
