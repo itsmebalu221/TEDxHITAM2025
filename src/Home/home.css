@@ -1,0 +1,200 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+.first{
+    display: flex;
+    justify-content:center ;
+    text-align: center;
+    
+}
+
+p{
+    text-align: justify;
+}
+
+.tedxted{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 70px;
+    color: aliceblue;
+    justify-content: space-around;
+}
+
+.tedxted .TED{
+    font-family:'Roboto', sans-serif ;
+    font-weight: 800;
+    color: #E62B1E;
+}
+
+.tedx{
+   width:300px;
+   height:auto;
+   margin-top: 50px;
+   
+}
+
+
+.shiny{
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.invisible{
+    width: 600px;
+}
+
+.bg{
+    height:680px;
+    position:relative;
+    z-index:0;
+    
+}
+
+.head{
+   position:relative;
+   z-index:50;
+   margin-top:-680px;
+   justify-content: center;
+   display: flex;
+   text-align: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.reminder-btn {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+  background-color: #c71f37;
+  color: rgb(255, 255, 255);
+  border: 2px solid #c71f37;
+  padding: 5px 16px;
+  margin: 8px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 300ms;
+  margin-top:110px;
+  margin-bottom: 50px;
+}
+.reminder-btn:hover {
+  background-color: #000000;
+  border: #c71f37 2px solid;
+}
+
+.lo{
+    width: 300px;
+    height: 200px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.cont2{
+    width: 85%;
+    margin:0px auto 0px auto;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.t1{
+    width: 45%;
+}
+
+
+.what{
+    font-family:  'Roboto', sans-serif;
+}
+
+.exp{
+    margin: 60px 0px 0px 0px;
+    padding: 3px 15px 5px;
+}
+
+.AboutTEDx{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 85px 10px 100px ;
+    color: aliceblue;
+}
+
+.about{
+    margin: 10px 10px 10px 60px;
+    padding: 10px;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    .tedx{
+   width:300px;
+   height:auto;
+   margin-top:200px;
+}
+.cont2{
+    width: 85%;
+    margin:0px auto 0px auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.exp{
+    margin: 30px 0px 0px 0px;
+}
+
+.invisible{
+    width: 350px;
+}
+
+.tedxted{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    color: aliceblue;
+    justify-content: space-around;
+}
+.t1{
+    width: auto;
+    padding: 10px;
+}
+
+.AboutTEDx{
+    display: flex;
+    flex-direction: column;
+   padding: 10px;
+   
+    color: aliceblue;
+}
+.AboutTEDx .about{
+    margin: 20px 0px 0px 0px;
+}
+
+
+
+
+.shiny{
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+    .bg{
+    height:615px;
+    position:relative;
+    z-index:0;
+    opacity: 0.5;
+}
+
+.head{
+   position:relative;
+   z-index:50;
+   margin-top:-610px;
+}
+}

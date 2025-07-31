@@ -1,0 +1,76 @@
+.Header {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin: 0;
+  color: aliceblue;
+}
+
+.Space {
+  color: aliceblue;
+}
+.phone{
+  display: none;
+}
+
+.logo {
+  width: 200px;
+}
+
+.menu.ant-btn {
+  background-color: black;
+  color: aliceblue;
+  margin: 0px 5px;
+  border: 1px solid white;
+  transition: all 0.3s ease;
+}
+
+.menu.ant-btn:hover {
+  background-color: #1a1a1a;
+  color: white;
+}
+.MenuLay{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+/* 🌐 Responsive mobile styling */
+@media (max-width: 720px) {
+
+  
+  .Header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .lap{
+    display: none;
+  }
+  
+
+  .logo {
+    width: 160px;
+    margin-bottom: 10px;
+  }
+
+  .menu.ant-btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0px 5px;
+  }
+  .MenuLay{
+    width: 100%;
+    justify-content: space-between;
+  }
+}

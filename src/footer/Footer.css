@@ -1,0 +1,60 @@
+.tedx-footer {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Helvetica, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-left h3 {
+  font-size: 24px;
+  color: #e62b1e;
+  margin-bottom: 10px;
+}
+
+.footer-left p {
+  font-size: 16px;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.footer-menu h4 {
+  color: #e62b1e;
+  font-size: 18px;
+  margin: 0px 0px 10px 0px;
+
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-menu li {
+  margin: 8px 0;
+}
+
+.footer-menu a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: #e62b1e;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+}

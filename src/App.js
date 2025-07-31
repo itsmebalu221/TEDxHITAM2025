@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import Header from './Header/Header';
+import Booking from './Booking/booking';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import ClickSpark from "./ReactBits/cursor";
+import Home from './Home/Home'
+import Success from "./success";
+import Footer from "./footer/footer";
+import EBooking from "./ExternalForm/external"
+import Team from "./Team/Team";
+import Speakers from "./Speakers/speakers";
+import About from './About/about'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/failed" element={<Home />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/speakers" element={<Speakers/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/Team" element={<Team />} />
+          <Route path="/BookingsExternal" element={<EBooking />} />
+          <Route path="*" element={<h1 style={{ color: 'white' }}>404 - Page Not Found</h1>} />
+        </Routes>
+        <Footer/>
+      </div>
+      
+    </BrowserRouter>
   );
 }
 

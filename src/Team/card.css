@@ -1,0 +1,34 @@
+.bg11{
+    width: 250px;
+    
+    background-color: rgb(27, 27, 27);
+    border-radius: 25px;
+    padding: 5px;
+    color: aliceblue;
+}
+.bg11 img{
+    width: 250px;
+    height: 250px;
+    border-radius: 21px;
+}
+
+.probtn{
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    border-radius: 21px;
+    height: 35px;
+    border: solid rgb(198, 198, 198) 2px;
+    background-color: rgb(192, 192, 192);
+    cursor: pointer;
+    transition: 200ms;
+}
+.probtn:hover{
+    background-color: rgb(255, 90, 90);
+    border: 2px solid red;
+    transition: 200ms;
+}
+.probtn:active{
+    transform: scale(0.95);
+    transition: 200ms;
+}
