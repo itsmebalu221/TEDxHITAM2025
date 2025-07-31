@@ -57,7 +57,7 @@ const items = [
   {
     key: '6',
     label: (
-      <a rel="noopener noreferrer" href="#">
+      <a rel="noopener noreferrer" href="/Contact">
         Contact Us
       </a>
     ),

@@ -11,6 +11,7 @@ import EBooking from "./ExternalForm/external"
 import Team from "./Team/Team";
 import Speakers from "./Speakers/speakers";
 import About from './About/about'
+import Contact from "./Contact/contact";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/Team" element={<Team />} />
           <Route path="/BookingsExternal" element={<EBooking />} />
+          <Route path="/Contact" element={<Contact />} />
           <Route path="*" element={<h1 style={{ color: 'white' }}>404 - Page Not Found</h1>} />
         </Routes>
         <Footer/>
