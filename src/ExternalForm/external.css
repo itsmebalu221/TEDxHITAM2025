@@ -80,6 +80,7 @@ form input {
   margin: 0;
 }
 .no-spinner {
+  appearance: textfield;
   -moz-appearance: textfield;
 }
 

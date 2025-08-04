@@ -1,60 +1,163 @@
+/* General Footer Styles */
 .tedx-footer {
   background-color: #111;
   color: #fff;
-  padding: 40px 20px;
-  font-family: Helvetica, sans-serif;
+  padding: 60px 40px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  gap: 30px; /* Provides space between columns */
 }
 
-.footer-left h3 {
-  font-size: 24px;
-  color: #e62b1e;
-  margin-bottom: 10px;
+.footer-section {
+  flex: 1;
+  min-width: 220px; /* Ensures columns don't get too skinny */
+  margin-bottom: 20px;
 }
 
-.footer-left p {
-  font-size: 16px;
-  max-width: 400px;
-  line-height: 1.6;
-}
-
-.footer-menu h4 {
-  color: #e62b1e;
+.footer-section h4 {
   font-size: 18px;
-  margin: 0px 0px 10px 0px;
-
+  color: #e62b1e; /* TEDx Red */
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+  font-weight: 700;
 }
 
-.footer-menu ul {
-  list-style: none;
-  padding: 0;
+/* Underline effect for headings */
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #555;
 }
 
-.footer-menu li {
-  margin: 8px 0;
-}
-
-.footer-menu a {
-  color: #fff;
+.footer-section p, .footer-section a, .address-line span {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ccc;
   text-decoration: none;
+}
+
+.footer-section a:hover, .address-line:hover, .address-line:hover span, .address-line:hover i {
+  color: #e62b1e;
   transition: color 0.3s ease;
 }
 
-.footer-menu a:hover {
-  color: #e62b1e;
+/* Specific Section Styles */
+.footer-section.about .footer-logo {
+  width: 150px;
+  margin-bottom: 15px;
 }
 
+.venue-name {
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.address-line {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.address-line i {
+    margin-right: 10px;
+    margin-top: 5px; /* Adjust vertical alignment */
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Social Media Icons in "Follow Us" column */
+.social-icons a {
+  margin-right: 15px;
+  color: #ccc;
+  display: inline-flex; 
+  align-items: center;   
+  text-decoration: none;
+}
+
+.social-icons a i {
+    font-size: 28px;
+}
+
+.social-icons a span {
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+/* Styles for links in "Venue & Contact" column */
+.contact-links {
+    display: flex;
+    align-items: center;
+    margin-top: 15px; /* Add space above the icons */
+}
+
+.contact-links a {
+    margin-right: 18px; /* Space between icons */
+}
+
+.contact-links a i {
+    font-size: 24px; /* Icon size */
+}
+
+.event-date {
+  margin-top: 25px;
+}
+
+.event-date p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Footer Bottom Bar */
 .footer-bottom {
   text-align: center;
-  padding-top: 20px;
-  font-size: 14px;
+  padding-top: 40px;
+  margin-top: 40px;
   border-top: 1px solid #333;
-  margin-top: 30px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .footer-section {
+        flex-basis: 45%; /* Two columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    min-width: 100%;
+    flex-basis: auto;
+  }
+
+  .footer-section h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-icons, .contact-links, .address-line {
+    justify-content: center;
+  }
 }

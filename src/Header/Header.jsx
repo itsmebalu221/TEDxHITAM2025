@@ -1,108 +1,100 @@
-import React from "react";
-import './Header.css'
-import { redirect,useNavigate } from "react-router-dom";
-import logo from './logo-white.png'
-import Dither from '../ReactBits/dither'
-import { DownOutlined, UserOutlined,FormOutlined,SearchOutlined ,MenuOutlined,DownloadOutlined} from '@ant-design/icons';
-import { Button, Dropdown, message, Space, Tooltip } from 'antd';
-import LandingPopup from '../pop'
-import { useState } from "react";
+import React, { useEffect, useState } from 'react';
+import './header.css';
+import { FormOutlined, MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
+const logo = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewBox="0 0 120 40"><text x="0" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">TEDx</text><text x="65" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#E62B1E">HITAM</text></svg>`;
 
-
-const items = [
-  
-  {
-    key: '1',
-    label: (
-      <a  rel="noopener noreferrer" href="https://tedxhitam.com">
-        Home
-      </a>
-    ),
-  },
-  {
-    key: '2',
-    label: (
-      <a  rel="noopener noreferrer" href="/about">
-        About
-      </a>
-      
-    ),
-    
-  },
-  {
-    key: '3',
-    label: (
-      <a  rel="noopener noreferrer" href="/Team">
-        Our Team
-      </a>
-    ),
-  },
-  {
-    key: '4',
-    label: (
-      <a  rel="noopener noreferrer" href="/Speakers">
-        Speakers
-      </a>
-    ),
-  },
-  {
-    key: '5',
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Past Editions
-      </a>
-    ),
-  },
-  {
-    key: '6',
-    label: (
-      <a rel="noopener noreferrer" href="/Contact">
-        Contact Us
-      </a>
-    ),
-  },
-  
-];
-
-function Header() {
-  const [showPopup, setShowPopup] = useState(false);
-  const navigate = useNavigate();
-
+function LandingPopup({ open, setOpen }) {
+  if (!open) return null;
   return (
-    <div className="Header">
-      <img src={logo} alt="TEDxHITAM Official Logo" className="logo" />
-      <div className="MenuLay">
-        <Dropdown menu={{ items }} placement="bottomLeft">
-          <Button
-            ghost
-            danger
-            className="menu"
-            style={{ padding: "0px 10px", marginLeft: "0px" }}
-            icon={<MenuOutlined />}
-          />
-        </Dropdown>
-
-        
-
-        <Button
-          onClick={() => setShowPopup(true)}
-          ghost
-          danger
-          className="menu"
-          icon={<FormOutlined />}
-        >
-          Book Your Ticket Now
-        </Button>
+    <div className="popup-overlay">
+      <div className="popup-content">
+        <button onClick={() => setOpen(false)} className="popup-close">
+          <CloseOutlined style={{ fontSize: '24px' }} />
+        </button>
+        <h2 className="popup-heading">Book Your Ticket</h2>
+        <p className="popup-text">This is where the ticket booking form would appear.</p>
+        <button onClick={() => setOpen(false)} className="popup-button">
+          Close Popup
+        </button>
       </div>
-
-      {/* 🔥 Show the popup if triggered */}
-      {showPopup && (
-        <LandingPopup open={showPopup} setOpen={setShowPopup} />
-      )}
     </div>
   );
 }
 
+export default function Header() {
+  const [showPopup, setShowPopup] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-export default Header;
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'Home', href: '#' },
+    { name: 'About', href: '#' },
+    { name: 'Speakers', href: '#' },
+    { name: 'Team', href: '#' },
+    { name: 'Gallery', href: '#' },
+  ];
+
+  return (
+    <>
+      <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="header-container">
+          <a href="#"><img src={logo} alt="TEDxHITAM Logo" className="logo" /></a>
+          <nav className="nav-desktop">
+            {navLinks.map(link => (
+              <a key={link.name} href={link.href} className="nav-link">
+                {link.name}
+                <span className="nav-underline"></span>
+              </a>
+            ))}
+          </nav>
+          <div className="button-desktop">
+            <button onClick={() => setShowPopup(true)} className="book-button">
+              <FormOutlined /> Book Ticket
+            </button>
+          </div>
+          <button onClick={() => setIsMenuOpen(true)} className="menu-button">
+            <MenuOutlined style={{ fontSize: '24px' }} />
+          </button>
+        </div>
+      </header>
+
+      {isMenuOpen && (
+        <div className="mobile-menu">
+          <div className="mobile-header">
+            <a href="#"><img src={logo} alt="TEDxHITAM Logo" className="logo" /></a>
+            <button onClick={() => setIsMenuOpen(false)} className="menu-button">
+              <CloseOutlined style={{ fontSize: '24px' }} />
+            </button>
+          </div>
+          <nav className="mobile-nav">
+            {navLinks.map(link => (
+              <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} className="mobile-link">
+                {link.name}
+              </a>
+            ))}
+          </nav>
+          <div className="mobile-footer">
+            <button
+              onClick={() => {
+                setShowPopup(true);
+                setIsMenuOpen(false);
+              }}
+              className="book-button"
+            >
+              <FormOutlined /> Book Ticket
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showPopup && <LandingPopup open={showPopup} setOpen={setShowPopup} />}
+    </>
+  );
+}
