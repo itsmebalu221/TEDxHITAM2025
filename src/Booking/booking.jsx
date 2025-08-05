@@ -17,7 +17,7 @@ import { message, Flex, Radio, ConfigProvider, Upload } from "antd";
 import { UploadOutlined } from '@ant-design/icons';
 import { db } from "../firebase";
 import { ref, update } from "firebase/database";
-import QR from "./Assets/Booking/QR_ORG.jpg";
+import QR from "../Assets/Booking/QR_ORG.jpg";
 import './booking.css';
 import { useNavigate } from "react-router-dom";
 import {Spin} from 'antd'

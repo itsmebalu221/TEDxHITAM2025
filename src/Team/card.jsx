@@ -1,6 +1,5 @@
 import react from "react"
 import './card.css'
-import img from "./1111.jpg"
 import Icon from "@ant-design/icons"
 
 function Card(props){

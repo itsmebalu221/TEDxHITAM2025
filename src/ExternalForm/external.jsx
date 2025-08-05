@@ -14,7 +14,7 @@ import {
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import ClickSpark from "../ReactBits/cursor";
 import SeatBooking from "../SeatBooking/Seat";
-import QR from "./Assets/Booking/QR_ORG.jpg";
+import QR from "../Assets/Booking/QR_ORG.jpg";
 import './external.css';
 import { useNavigate } from "react-router-dom";
 import { Spin, message } from 'antd';
